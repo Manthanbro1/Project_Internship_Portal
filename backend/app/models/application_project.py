@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy.sql import func
+from sqlalchemy import Column, Integer, ForeignKey
 # Replace the single relative import with a tolerant import:
 try:
     # normal package import (when used as part of app)
@@ -14,12 +13,9 @@ except (ImportError, ValueError):
         sys.path.insert(0, pkg_root)
     from app.database.base import Base
 
-class User(Base):
-    __tablename__ = "users"
+class ApplicationProject(Base):
+    __tablename__ = "application_projects"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    email = Column(String, unique=True, nullable=False, index=True)
-    password_hash = Column(String, nullable=False)
-    role = Column(String, nullable=False)  # student | company
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    id = Column(Integer, primary_key=True)
+    application_id = Column(Integer, ForeignKey("applications.id"), nullable=False)
+    project_id = Column(Integer, ForeignKey("projects.id"), nullable=False)
