@@ -20,3 +20,7 @@ Base.metadata.create_all(bind=engine)
 @app.get("/")
 def root():
     return {"status": "Backend running"}
+
+from .routers import auth
+
+app.include_router(auth.router)
