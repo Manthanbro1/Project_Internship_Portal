@@ -1,23 +1,10 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
-from sqlalchemy.sql import func
-# Replace the single relative import with a tolerant import:
-try:
-    # normal package import (when used as part of app)
-    from ..database.base import Base
-except (ImportError, ValueError):
-    # fallback when running the file directly (no parent package)
-    import os
-    import sys
-    # add backend folder to sys.path so absolute package import works
-    pkg_root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-    if pkg_root not in sys.path:
-        sys.path.insert(0, pkg_root)
-    from app.database.base import Base
+from sqlalchemy import Column, Integer, ForeignKey
+from ..database.base import Base
+
 
 class Project_Skill(Base):
     __tablename__ = "project_skills"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, unique=True, nullable=False)
-    is_custom = Column(Boolean, default=False)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    project_id = Column(Integer, ForeignKey("projects.id"), nullable=False)
+    skill_id = Column(Integer, ForeignKey("skills.id"), nullable=False)
