@@ -1,3 +1,4 @@
+# backend/app/models/internship.py
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.sql import func
 # Replace the single relative import with a tolerant import:

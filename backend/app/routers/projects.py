@@ -1,4 +1,4 @@
-# routers/project.py
+# backend/app/routers/project.py
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from ..core.dependencies import student_only, get_db
@@ -6,7 +6,8 @@ from ..models.project import Project
 from ..models.skill import Skill
 from ..models.project_skill import Project_Skill
 from ..schemas.project import ProjectCreate, ProjectResponse
-
+from ..services.recommendation import recommend_projects_for_internship
+from ..core.dependencies import company_only
 router = APIRouter(
     prefix="/student",
     tags=["Students"]
@@ -79,3 +80,11 @@ def get_project(
         raise HTTPException(status_code=404, detail="Project not found")
 
     return project
+
+@router.get("/projects/recommended/{internship_id}")
+def recommended_projects(
+    internship_id: int,
+    user = Depends(company_only),
+    db: Session = Depends(get_db)
+):
+    return recommend_projects_for_internship(internship_id, db)

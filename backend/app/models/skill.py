@@ -1,3 +1,4 @@
+# backend/app/models/skill.py
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
 from ..database.base import Base

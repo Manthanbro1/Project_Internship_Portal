@@ -1,3 +1,4 @@
+# backend/app/models/student_profile.py
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 
 # Replace the single relative import with a tolerant import:

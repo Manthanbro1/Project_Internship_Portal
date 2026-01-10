@@ -1,3 +1,4 @@
+# backend/app/models/application_project.py
 from sqlalchemy import Column, Integer, ForeignKey
 # Replace the single relative import with a tolerant import:
 try:

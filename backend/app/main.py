@@ -1,4 +1,5 @@
 # uvicorn backend.app.main:app --reload
+# backend/app/main.py
 from fastapi import FastAPI
 from .database.session import engine
 from .database.base import Base
@@ -15,6 +16,7 @@ from .models.application_project import ApplicationProject
 from .routers import auth
 from .routers import student,projects
 from .routers import company, internships
+from .routers import applications
 app = FastAPI(title="Project-Centric Internship Platform")
 
 Base.metadata.create_all(bind=engine)
@@ -28,3 +30,5 @@ app.include_router(student.router)
 app.include_router(projects.router)
 app.include_router(company.router)
 app.include_router(internships.router)
+app.include_router(applications.router)
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE3NjgxMzc2ODl9.SpUpd1BHN_Ha4DJ17OFXXQsWPG0_rhalYPDPE9H2WSk

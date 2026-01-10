@@ -1,4 +1,4 @@
-# routers/student.py
+# backend/app/routers/student.py
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from ..core.dependencies import student_only, get_db

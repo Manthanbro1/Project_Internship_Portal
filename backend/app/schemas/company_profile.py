@@ -1,3 +1,4 @@
+# backend/app/schemas/company_profile.py
 from pydantic import BaseModel
 from typing import Optional
 

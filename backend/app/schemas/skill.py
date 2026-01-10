@@ -1,3 +1,4 @@
+# backend/app/schemas/skill.py
 from pydantic import BaseModel
 
 class SkillResponse(BaseModel):

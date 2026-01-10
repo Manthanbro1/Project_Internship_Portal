@@ -1,6 +1,8 @@
+# backend/app/routers/internships.py
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-
+from ..services.recommendation import recommend_internships_for_student
+from ..core.dependencies import student_only
 from ..core.dependencies import company_only, get_db
 from ..models.internship import Internship
 from ..schemas.internship import InternshipCreate, InternshipResponse
@@ -38,3 +40,9 @@ def list_internships(
         Internship.company_id == user.id
     ).all()
 
+@router.get("/internships/recommended")
+def recommended_internships(
+    user = Depends(student_only),
+    db: Session = Depends(get_db)
+):
+    return recommend_internships_for_student(user.id, db)

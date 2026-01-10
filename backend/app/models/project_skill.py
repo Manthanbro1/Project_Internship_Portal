@@ -1,3 +1,4 @@
+# backend/app/models/project_skill.py
 from sqlalchemy import Column, Integer, ForeignKey
 from ..database.base import Base
 
