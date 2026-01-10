@@ -17,7 +17,16 @@ from .routers import auth
 from .routers import student,projects
 from .routers import company, internships
 from .routers import applications
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="Project-Centric Internship Platform")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      # Hackathon-safe
+    allow_credentials=True,
+    allow_methods=["*"],      # Allows OPTIONS, POST, GET, etc.
+    allow_headers=["*"],
+)
 
 Base.metadata.create_all(bind=engine)
 
