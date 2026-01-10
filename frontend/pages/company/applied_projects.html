@@ -1,20 +1,35 @@
-<h3>Recommended Projects</h3>
-<div id="projects"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hire Student</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
 
-<script>
-async function loadRecommendedProjects(internshipId) {
-  const res = await fetch(
-    `${API}/projects/recommended/${internshipId}`,
-    { headers: getAuthHeaders() }
-  );
+<div class="layout">
 
-  const data = await res.json();
-  const div = document.getElementById("projects");
+  <aside class="sidebar">
+    <h3>Company</h3>
+    <a href="post_internship.html">Post Internship</a>
+    <a href="applied_projects.html" class="active">Hire Student</a>
+    <a href="all_applications.html">All Applications</a>
+    <a href="#">Profile</a>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  data.forEach(p => {
-    div.innerHTML += `
-      <p>${p.title} – Match: ${p.similarity_score}%</p>
-    `;
-  });
-}
-</script>
+  <main class="content">
+    <h2>Hire Student (Project-Based)</h2>
+
+    <select id="internshipSelect">
+      <option value="">Select Internship</option>
+    </select>
+
+    <h3>Recommended Projects</h3>
+    <div id="projects"></div>
+  </main>
+
+</div>
+
+<script src="../../assets/js/company.js"></script>
+</body>
+</html>

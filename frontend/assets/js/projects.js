@@ -27,9 +27,6 @@ async function loadProjects() {
 function goToAdd() {
   window.location.href = "add_project.html";
 }
-function goToAdd2() {
-  window.location.href = "find_internship.html";
-}
 
 loadProjects();
 
@@ -58,5 +55,3 @@ async function submitProject() {
     alert("Failed to add project");
   }
 }
-
-submitProject();

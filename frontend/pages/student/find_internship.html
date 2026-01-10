@@ -1,24 +1,41 @@
-<h2>Recommended Internships</h2>
-<div id="internships"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Internship</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
 
-<script src="../../assets/js/common.js"></script>
-<script>
-async function loadRecommendations() {
-  const res = await fetch(`${API}/internships/recommended`, {
-    headers: getAuthHeaders()
-  });
+<div class="layout">
 
-  const data = await res.json();
-  const div = document.getElementById("internships");
+  <aside class="sidebar">
+    <h3>Student</h3>
+    <a href="my_projects.html">My Projects</a>
+    <a href="find_internship.html" class="active">Find Internship</a>
+    <a href="applications.html">Applications</a>
+    <a href="#">Profile</a>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  data.forEach(i => {
-    div.innerHTML += `
-      <h4>${i.role_title}</h4>
-      <p>Match: ${i.similarity_score}%</p>
-      <hr/>
-    `;
-  });
-}
+  <main class="content">
+    <h2>Find Internship</h2>
 
-loadRecommendations();
-</script>
+    <!-- Search -->
+    <input
+      type="text"
+      id="search"
+      placeholder="Search by role or skill"
+    >
+
+    <h3>⭐ Recommended for You</h3>
+    <div id="recommended"></div>
+
+    <h3>📋 All Internships</h3>
+    <div id="allInternships"></div>
+  </main>
+
+</div>
+
+<script src="../../assets/js/student.js"></script>
+</body>
+</html>

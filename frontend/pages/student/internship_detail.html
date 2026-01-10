@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Projects</title>
+  <title>Internship Detail</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
@@ -10,23 +10,23 @@
 
   <aside class="sidebar">
     <h3>Student</h3>
-
-    <a href="my_projects.html" class="active">My Projects</a>
+    <a href="my_projects.html">My Projects</a>
     <a href="find_internship.html">Find Internship</a>
     <a href="applications.html">Applications</a>
 
     <a href="#">Profile</a>
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
-  <main class="content">
-    <h2>My Projects</h2>
-    <a href="add_project.html" class="btn">+ Add Project</a>
-    <div id="project"></div>
-  </main>
 
   <main class="content">
-    <h2>My Projects</h2>
-    <div id="projects"></div>
+    <h2 id="roleTitle"></h2>
+    <p id="roleDesc"></p>
+
+    <h3>Attach Projects (1–3)</h3>
+    <div id="projectList"></div>
+
+    <button id="applyBtn" class="btn">Apply</button>
+    <p id="error" class="error"></p>
   </main>
 
 </div>

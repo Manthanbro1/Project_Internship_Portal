@@ -13,3 +13,22 @@ function getAuthHeaders() {
     "Authorization": `Bearer ${token}`
   };
 }
+function requireAuth(requiredRole = null) {
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
+
+  if (!token) {
+    window.location.href = "/frontend/pages/auth/login.html";
+    return;
+  }
+
+  if (requiredRole && role !== requiredRole) {
+    alert("Unauthorized access");
+    window.location.href = "/frontend/index.html";
+  }
+}
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "/frontend/index.html";
+}

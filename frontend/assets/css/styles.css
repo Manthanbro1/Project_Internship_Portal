@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body.centered {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h1, .card h2 {
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn.secondary {
+  background: #6b7280;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.project-card {
+  background: white;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.internship-card {
+  background: white;
+  padding: 16px;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.internship-card h4 {
+  margin: 0;
+}
+
+.match {
+  font-weight: bold;
+  color: #16a34a;
+}
+.application-card {
+  background: white;
+  padding: 16px;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.Applied { color: #2563eb; }
+.status.Shortlisted { color: #ca8a04; }
+.status.Selected { color: #16a34a; }
+.status.Rejected { color: #dc2626; }
+
+.recommend-card {
+  background: white;
+  padding: 16px;
+  margin-top: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.recommend-score {
+  font-weight: bold;
+  color: #16a34a;
+}
+.company-app {
+  background: white;
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+textarea.reject {
+  width: 100%;
+  margin-top: 10px;
+}

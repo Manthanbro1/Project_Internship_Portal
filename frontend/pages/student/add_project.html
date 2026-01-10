@@ -5,31 +5,56 @@
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-  <h2>Add Project</h2>
 
-  <input id="title" placeholder="Project Title" />
-  <textarea id="description" placeholder="Description"></textarea>
-  <input id="members" type="number" placeholder="Members Count" />
-  <textarea id="role" placeholder="Your Role"></textarea>
+<div class="layout">
 
-  <select id="difficulty">
-    <option>Easy</option>
-    <option>Medium</option>
-    <option>Hard</option>
-  </select>
+  <aside class="sidebar">
+    <h3>Student</h3>
+    <a href="my_projects.html">My Projects</a>
+    <a href="find_internship.html">Find Internship</a>
+    <a href="applications.html">Applications</a>
 
-  <select id="status">
-    <option>Idea</option>
-    <option>Ongoing</option>
-    <option>Completed</option>
-  </select>
+    <a href="#">Profile</a>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  <textarea id="outcome" placeholder="Outcome"></textarea>
-  <input id="skills" placeholder="Skills (comma separated)" />
+  <main class="content">
+    <h2>Add Project</h2>
 
-  <button onclick="submitProject()">Submit</button>
+    <form id="projectForm">
+      <input type="text" id="title" placeholder="Project Title" required>
 
-  <script src="../../assets/js/common.js"></script>
-  <script src="../../assets/js/projects.js"></script>
+      <textarea id="description" placeholder="Project Description" required></textarea>
+
+      <input type="number" id="members_count" placeholder="Number of Members">
+
+      <textarea id="student_role" placeholder="Your Role in the Project" required></textarea>
+
+      <select id="difficulty" required>
+        <option value="">Difficulty</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+      <select id="status" required>
+        <option value="">Status</option>
+        <option value="Idea">Idea</option>
+        <option value="Ongoing">Ongoing</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <textarea id="outcome" placeholder="Outcome / Learnings"></textarea>
+
+      <input type="text" id="skills" placeholder="Skills (comma separated)" required>
+
+      <button type="submit" class="btn">Save Project</button>
+      <p id="error" class="error"></p>
+    </form>
+  </main>
+
+</div>
+
+<script src="../../assets/js/student.js"></script>
 </body>
 </html>

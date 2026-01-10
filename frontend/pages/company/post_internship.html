@@ -1,31 +1,66 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
   <title>Post Internship</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-  <h2>Post Internship</h2>
 
-  <input id="title" placeholder="Role Title" />
-  <textarea id="desc" placeholder="Role Description"></textarea>
-  <input id="skills" placeholder="Required Skills (comma separated)" />
+<div class="layout">
 
-  <select id="paid">
-    <option value="true">Paid</option>
-    <option value="false">Unpaid</option>
-  </select>
+  <aside class="sidebar">
+    <h3>Company</h3>
+    <a href="post_internship.html" class="active">Post Internship</a>
+    <a href="applied_projects.html">Hire Student</a>
+    <a href="all_applications.html">All Applications</a>
+    <a href="#">Profile</a>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  <input id="stipend" type="number" placeholder="Stipend (optional)" />
+  <main class="content">
+    <h2>Post Internship</h2>
 
-  <select id="mode">
-    <option>Online</option>
-    <option>Offline</option>
-  </select>
+    <form id="internshipForm">
+      <input type="text" id="role_title" placeholder="Internship Role Title" required>
 
-  <button onclick="postInternship()">Post</button>
+      <textarea
+        id="role_description"
+        placeholder="Role Description (what the intern will work on)"
+        required
+      ></textarea>
 
-  <script src="../../assets/js/common.js"></script>
-  <script src="../../assets/js/internships.js"></script>
+      <input
+        type="text"
+        id="required_skills"
+        placeholder="Required Skills (comma separated)"
+        required
+      >
+
+      <select id="paid" required>
+        <option value="">Paid?</option>
+        <option value="true">Paid</option>
+        <option value="false">Unpaid</option>
+      </select>
+
+      <input
+        type="number"
+        id="stipend_amount"
+        placeholder="Stipend Amount (if paid)"
+      >
+
+      <select id="mode" required>
+        <option value="">Mode</option>
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+      </select>
+
+      <button type="submit" class="btn">Post Internship</button>
+      <p id="error" class="error"></p>
+    </form>
+  </main>
+
+</div>
+
+<script src="../../assets/js/company.js"></script>
 </body>
 </html>

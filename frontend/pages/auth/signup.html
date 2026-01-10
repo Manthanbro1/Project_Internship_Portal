@@ -2,23 +2,27 @@
 <html>
 <head>
   <title>Signup</title>
-  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
-<body>
-  <h2>Signup</h2>
+<body class="centered">
 
-  <input id="name" placeholder="Name" />
-  <input id="email" placeholder="Email" />
-  <input id="password" type="password" placeholder="Password" />
+  <form class="card" id="signupForm">
+    <h2>Create Account</h2>
 
-  <select id="role">
-    <option value="student">Student</option>
-    <option value="company">Company</option>
-  </select>
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
 
-  <button onclick="signup()">Create Account</button>
+    <select id="role" required>
+      <option value="">Select Role</option>
+      <option value="student">Student</option>
+      <option value="company">Company</option>
+    </select>
+
+    <button type="submit" class="btn">Register</button>
+    <p id="error" class="error"></p>
+  </form>
 
   <script src="../../assets/js/auth.js"></script>
 </body>
 </html>
-l>

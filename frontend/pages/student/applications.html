@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>My Applications</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
 
+<div class="layout">
+
+  <aside class="sidebar">
+    <h3>Student</h3>
+    <a href="my_projects.html">My Projects</a>
+    <a href="find_internship.html">Find Internship</a>
+    <a href="applications.html" class="active">Applications</a>
+    <a href="#">Profile</a>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
+
+  <main class="content">
+    <h2>My Applications</h2>
+    <div id="applications"></div>
+  </main>
+
+</div>
+
+<script src="../../assets/js/student.js"></script>
 </body>
 </html>
