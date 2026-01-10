@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Add Project</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
+  <h2>Add Project</h2>
 
+  <input id="title" placeholder="Project Title" />
+  <textarea id="description" placeholder="Description"></textarea>
+  <input id="members" type="number" placeholder="Members Count" />
+  <textarea id="role" placeholder="Your Role"></textarea>
+
+  <select id="difficulty">
+    <option>Easy</option>
+    <option>Medium</option>
+    <option>Hard</option>
+  </select>
+
+  <select id="status">
+    <option>Idea</option>
+    <option>Ongoing</option>
+    <option>Completed</option>
+  </select>
+
+  <textarea id="outcome" placeholder="Outcome"></textarea>
+  <input id="skills" placeholder="Skills (comma separated)" />
+
+  <button onclick="submitProject()">Submit</button>
+
+  <script src="../../assets/js/common.js"></script>
+  <script src="../../assets/js/projects.js"></script>
 </body>
 </html>

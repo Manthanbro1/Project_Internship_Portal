@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<h3>Recommended Projects</h3>
+<div id="projects"></div>
 
-</body>
-</html>
+<script>
+async function loadRecommendedProjects(internshipId) {
+  const res = await fetch(
+    `${API}/projects/recommended/${internshipId}`,
+    { headers: getAuthHeaders() }
+  );
+
+  const data = await res.json();
+  const div = document.getElementById("projects");
+
+  data.forEach(p => {
+    div.innerHTML += `
+      <p>${p.title} – Match: ${p.similarity_score}%</p>
+    `;
+  });
+}
+</script>

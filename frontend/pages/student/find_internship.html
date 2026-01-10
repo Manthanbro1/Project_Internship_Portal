@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<h2>Recommended Internships</h2>
+<div id="internships"></div>
 
-</body>
-</html>
+<script src="../../assets/js/common.js"></script>
+<script>
+async function loadRecommendations() {
+  const res = await fetch(`${API}/internships/recommended`, {
+    headers: getAuthHeaders()
+  });
+
+  const data = await res.json();
+  const div = document.getElementById("internships");
+
+  data.forEach(i => {
+    div.innerHTML += `
+      <h4>${i.role_title}</h4>
+      <p>Match: ${i.similarity_score}%</p>
+      <hr/>
+    `;
+  });
+}
+
+loadRecommendations();
+</script>

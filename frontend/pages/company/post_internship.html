@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Post Internship</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
+  <h2>Post Internship</h2>
 
+  <input id="title" placeholder="Role Title" />
+  <textarea id="desc" placeholder="Role Description"></textarea>
+  <input id="skills" placeholder="Required Skills (comma separated)" />
+
+  <select id="paid">
+    <option value="true">Paid</option>
+    <option value="false">Unpaid</option>
+  </select>
+
+  <input id="stipend" type="number" placeholder="Stipend (optional)" />
+
+  <select id="mode">
+    <option>Online</option>
+    <option>Offline</option>
+  </select>
+
+  <button onclick="postInternship()">Post</button>
+
+  <script src="../../assets/js/common.js"></script>
+  <script src="../../assets/js/internships.js"></script>
 </body>
 </html>
