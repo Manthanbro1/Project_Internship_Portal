@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Company Profile</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-  <h2>Company Profile</h2>
+<div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">C</div>
+      <div>
+        <div class="eyebrow">Company Workspace</div>
+        <h3>Profile</h3>
+      </div>
+      <p>Keep your company context sharp so students understand the kind of work, team, and environment you offer.</p>
+    </div>
 
-  <input id="sector" placeholder="Sector" />
-  <textarea id="description" placeholder="Description"></textarea>
-  <input id="website" placeholder="Website" />
-  <input id="linkedin" placeholder="LinkedIn" />
+    <nav>
+      <a href="post_internship.html">Post Internship</a>
+      <a href="applied_projects.html">Hire Student</a>
+      <a href="all_applications.html">All Applications</a>
+      <a href="profile.html" class="active">Profile</a>
+    </nav>
 
-  <button onclick="saveCompanyProfile()">Save</button>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  <script src="../../assets/js/common.js"></script>
-  <script src="../../assets/js/company.js"></script>
+  <main class="content">
+    <section class="profile-shell page-enter stagger-1">
+      <div class="eyebrow">Company Context</div>
+      <h2>Make the company legible.</h2>
+      <p>A clear company profile helps students understand the domain, product style, and working context behind your internships.</p>
+
+      <div class="profile-form" style="margin-top: 1.4rem;">
+        <label class="field-label" for="sector">Sector</label>
+        <input id="sector" placeholder="Sector" />
+
+        <label class="field-label" for="description">Description</label>
+        <textarea id="description" placeholder="What your company builds and how the team works"></textarea>
+
+        <div class="split-grid">
+          <div>
+            <label class="field-label" for="website">Website</label>
+            <input id="website" placeholder="Website" />
+          </div>
+          <div>
+            <label class="field-label" for="linkedin">LinkedIn</label>
+            <input id="linkedin" placeholder="LinkedIn" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button onclick="saveCompanyProfile()" class="btn" type="button">Save Profile</button>
+          <a href="post_internship.html" class="btn secondary">Back To Roles</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/js/company.js"></script>
 </body>
 </html>

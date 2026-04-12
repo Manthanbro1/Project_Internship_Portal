@@ -1,64 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Post Internship</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">C</div>
+      <div>
+        <div class="eyebrow">Company Workspace</div>
+        <h3>Publish Roles</h3>
+      </div>
+      <p>Create internship briefs that are specific enough to attract relevant student project portfolios.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Company</h3>
-    <a href="post_internship.html" class="active">Post Internship</a>
-    <a href="applied_projects.html">Hire Student</a>
-    <a href="all_applications.html">All Applications</a>
-    <a href="profile.html">Profile</a>
+    <nav>
+      <a href="post_internship.html" class="active">Post Internship</a>
+      <a href="applied_projects.html">Hire Student</a>
+      <a href="all_applications.html">All Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>Post Internship</h2>
+    <section class="form-shell page-enter stagger-1">
+      <div class="eyebrow">Role Builder</div>
+      <h2>Describe the work, not just the title.</h2>
+      <p>More precise role descriptions and skill lists produce better project recommendations for your team.</p>
 
-    <form id="internshipForm">
-      <input type="text" id="role_title" placeholder="Internship Role Title" required>
+      <form id="internshipForm" style="margin-top: 1.35rem;">
+        <label class="field-label" for="role_title">Internship Role Title</label>
+        <input type="text" id="role_title" placeholder="Backend Engineering Intern" required>
 
-      <textarea
-        id="role_description"
-        placeholder="Role Description (what the intern will work on)"
-        required
-      ></textarea>
+        <label class="field-label" for="role_description">Role Description</label>
+        <textarea
+          id="role_description"
+          placeholder="What the intern will build, support, or improve"
+          required
+        ></textarea>
 
-      <input
-        type="text"
-        id="required_skills"
-        placeholder="Required Skills (comma separated)"
-        required
-      >
+        <label class="field-label" for="required_skills">Required Skills</label>
+        <input
+          type="text"
+          id="required_skills"
+          placeholder="Python, FastAPI, SQL"
+          required
+        >
 
-      <select id="paid" required>
-        <option value="">Paid?</option>
-        <option value="true">Paid</option>
-        <option value="false">Unpaid</option>
-      </select>
+        <div class="split-grid">
+          <div>
+            <label class="field-label" for="paid">Compensation Type</label>
+            <select id="paid" required>
+              <option value="">Paid?</option>
+              <option value="true">Paid</option>
+              <option value="false">Unpaid</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="stipend_amount">Stipend Amount</label>
+            <input
+              type="number"
+              id="stipend_amount"
+              placeholder="Amount if paid"
+            >
+          </div>
+        </div>
 
-      <input
-        type="number"
-        id="stipend_amount"
-        placeholder="Stipend Amount (if paid)"
-      >
+        <label class="field-label" for="mode">Mode</label>
+        <select id="mode" required>
+          <option value="">Mode</option>
+          <option value="Online">Online</option>
+          <option value="Offline">Offline</option>
+        </select>
 
-      <select id="mode" required>
-        <option value="">Mode</option>
-        <option value="Online">Online</option>
-        <option value="Offline">Offline</option>
-      </select>
-
-      <button type="submit" class="btn">Post Internship</button>
-      <p id="error" class="error"></p>
-    </form>
+        <div class="actions">
+          <button type="submit" class="btn">Post Internship</button>
+          <a href="all_applications.html" class="btn secondary">View Applications</a>
+        </div>
+        <p id="error" class="error"></p>
+      </form>
+    </section>
   </main>
-
 </div>
 
 <script src="../../assets/js/company.js"></script>

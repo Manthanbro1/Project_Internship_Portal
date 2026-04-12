@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Applications</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">C</div>
+      <div>
+        <div class="eyebrow">Company Workspace</div>
+        <h3>Applications</h3>
+      </div>
+      <p>Review every incoming application, inspect status, and move candidates through your process.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Company</h3>
-    <a href="post_internship.html">Post Internship</a>
-    <a href="applied_projects.html">Hire Student</a>
-    <a href="all_applications.html" class="active">All Applications</a>
-    <a href="profile.html">Profile</a>
+    <nav>
+      <a href="post_internship.html">Post Internship</a>
+      <a href="applied_projects.html">Hire Student</a>
+      <a href="all_applications.html" class="active">All Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>All Applications</h2>
-    <div id="applications"></div>
-  </main>
+    <section class="shell-header page-enter stagger-1">
+      <div class="eyebrow">Hiring Pipeline</div>
+      <h2>Move applicants from review to decision.</h2>
+      <p>Use this queue to shortlist, select, or reject candidates based on the projects they attached to your internship postings.</p>
+    </section>
 
+    <section class="card page-enter stagger-2">
+      <div class="section-heading">
+        <div>
+          <h3 class="section-title">Incoming applications</h3>
+          <p class="section-subtitle">Status actions remain connected to the backend.</p>
+        </div>
+      </div>
+      <div id="applications" style="margin-top: 1rem;"></div>
+    </section>
+  </main>
 </div>
 
 <script src="../../assets/js/company.js"></script>

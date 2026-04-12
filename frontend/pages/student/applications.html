@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Applications</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Application Flow</h3>
+      </div>
+      <p>Track where each application stands and use the status trail to understand how your portfolio is landing.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Student</h3>
-    <a href="my_projects.html">My Projects</a>
-    <a href="find_internship.html">Find Internship</a>
-    <a href="applications.html" class="active">Applications</a>
-    <a href="profile.html">Profile</a>
+    <nav>
+      <a href="my_projects.html">My Projects</a>
+      <a href="find_internship.html">Find Internship</a>
+      <a href="applications.html" class="active">Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>My Applications</h2>
-    <div id="applications"></div>
-  </main>
+    <section class="shell-header page-enter stagger-1">
+      <div class="eyebrow">Status Board</div>
+      <h2>See every application in one place.</h2>
+      <p>Your current records show the internship id, status, and rejection reason when one is provided.</p>
+    </section>
 
+    <section class="card page-enter stagger-2">
+      <div class="section-heading">
+        <div>
+          <h3 class="section-title">Application history</h3>
+          <p class="section-subtitle">Use this page as your running pipeline view.</p>
+        </div>
+      </div>
+      <div id="applications"></div>
+    </section>
+  </main>
 </div>
 
 <script src="../../assets/js/student.js"></script>

@@ -1,58 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Project</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Portfolio</h3>
+      </div>
+      <p>Create entries that make your role and project outcomes obvious to companies.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Student</h3>
-    <a href="my_projects.html">My Projects</a>
-    <a href="find_internship.html">Find Internship</a>
-    <a href="applications.html">Applications</a>
+    <nav>
+      <a href="my_projects.html">My Projects</a>
+      <a href="find_internship.html">Find Internship</a>
+      <a href="applications.html">Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
 
-    <a href="profile.html">Profile</a>
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>Add Project</h2>
+    <section class="form-shell page-enter stagger-1">
+      <div class="eyebrow">New Entry</div>
+      <h2>Add a project worth being seen.</h2>
+      <p>Use concise project language. Good titles, clear descriptions, and deliberate skills will improve how your work is understood.</p>
 
-    <form id="projectForm">
-      <input type="text" id="title" placeholder="Project Title" required>
+      <form id="projectForm" style="margin-top: 1.3rem;">
+        <label class="field-label" for="title">Project Title</label>
+        <input type="text" id="title" placeholder="Project Title" required>
 
-      <textarea id="description" placeholder="Project Description" required></textarea>
+        <label class="field-label" for="description">Project Description</label>
+        <textarea id="description" placeholder="What was built, who it served, and what problem it solved" required></textarea>
 
-      <input type="number" id="members_count" placeholder="Number of Members">
+        <div class="split-grid">
+          <div>
+            <label class="field-label" for="members_count">Team Size</label>
+            <input type="number" id="members_count" placeholder="Number of Members">
+          </div>
+          <div>
+            <label class="field-label" for="difficulty">Difficulty</label>
+            <select id="difficulty" required>
+              <option value="">Difficulty</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </div>
+        </div>
 
-      <textarea id="student_role" placeholder="Your Role in the Project" required></textarea>
+        <label class="field-label" for="student_role">Your Contribution</label>
+        <textarea id="student_role" placeholder="What you specifically designed, built, tested, or improved" required></textarea>
 
-      <select id="difficulty" required>
-        <option value="">Difficulty</option>
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-      </select>
+        <div class="split-grid">
+          <div>
+            <label class="field-label" for="status">Project Status</label>
+            <select id="status" required>
+              <option value="">Status</option>
+              <option value="Idea">Idea</option>
+              <option value="Ongoing">Ongoing</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label" for="skills">Skills</label>
+            <input type="text" id="skills" placeholder="Python, FastAPI, SQL" required>
+          </div>
+        </div>
 
-      <select id="status" required>
-        <option value="">Status</option>
-        <option value="Idea">Idea</option>
-        <option value="Ongoing">Ongoing</option>
-        <option value="Completed">Completed</option>
-      </select>
+        <label class="field-label" for="outcome">Outcome / Learnings</label>
+        <textarea id="outcome" placeholder="What changed, what shipped, what you learned"></textarea>
 
-      <textarea id="outcome" placeholder="Outcome / Learnings"></textarea>
-
-      <input type="text" id="skills" placeholder="Skills (comma separated)" required>
-
-      <button type="submit" class="btn">Save Project</button>
-      <p id="error" class="error"></p>
-    </form>
+        <div class="actions">
+          <button type="submit" class="btn">Save Project</button>
+          <a href="my_projects.html" class="btn secondary">Cancel</a>
+        </div>
+        <p id="error" class="error"></p>
+      </form>
+    </section>
   </main>
-
 </div>
 
 <script src="../../assets/js/student.js"></script>

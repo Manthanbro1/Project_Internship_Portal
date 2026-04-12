@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hire Student</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">C</div>
+      <div>
+        <div class="eyebrow">Company Workspace</div>
+        <h3>Project Review</h3>
+      </div>
+      <p>Scan recommended student projects against each internship before you make shortlisting decisions.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Company</h3>
-    <a href="post_internship.html">Post Internship</a>
-    <a href="applied_projects.html" class="active">Hire Student</a>
-    <a href="all_applications.html">All Applications</a>
-    <a href="profile.html">Profile</a>
+    <nav>
+      <a href="post_internship.html">Post Internship</a>
+      <a href="applied_projects.html" class="active">Hire Student</a>
+      <a href="all_applications.html">All Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>Hire Student (Project-Based)</h2>
+    <section class="shell-header page-enter stagger-1">
+      <div class="eyebrow">Project Matching</div>
+      <h2>Review projects that fit each posted role.</h2>
+      <p>Select one of your internships to inspect ranked project matches from the student portfolio pool.</p>
+    </section>
 
-    <select id="internshipSelect">
-      <option value="">Select Internship</option>
-    </select>
+    <section class="card page-enter stagger-2">
+      <div class="section-heading">
+        <div>
+          <h3 class="section-title">Choose an internship</h3>
+          <p class="section-subtitle">The recommendation list updates based on the role you select.</p>
+        </div>
+      </div>
 
-    <h3>Recommended Projects</h3>
-    <div id="projects"></div>
+      <select id="internshipSelect" style="margin-top: 1rem;">
+        <option value="">Select Internship</option>
+      </select>
+
+      <div style="margin-top: 1.4rem;">
+        <div class="eyebrow">Recommended Projects</div>
+        <div id="projects" style="margin-top: 1rem;"></div>
+      </div>
+    </section>
   </main>
-
 </div>
 
 <script src="../../assets/js/company.js"></script>

@@ -1,39 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Find Internship</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Explore Roles</h3>
+      </div>
+      <p>Browse internships, compare relevance, and apply with the projects that support your case.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Student</h3>
-    <a href="my_projects.html">My Projects</a>
-    <a href="find_internship.html" class="active">Find Internship</a>
-    <a href="applications.html">Applications</a>
-    <a href="profile.html">Profile</a>
+    <nav>
+      <a href="my_projects.html">My Projects</a>
+      <a href="find_internship.html" class="active">Find Internship</a>
+      <a href="applications.html">Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2>Find Internship</h2>
+    <section class="shell-header page-enter stagger-1">
+      <div class="eyebrow">Discovery</div>
+      <h2>Find internships aligned with how you work.</h2>
+      <p>Recommendations are based on your project portfolio and profile. Use search to scan every open role in the demo dataset.</p>
+    </section>
 
-    <!-- Search -->
-    <input
-      type="text"
-      id="search"
-      placeholder="Search by role or skill"
-    >
+    <section class="dashboard-grid page-enter stagger-2">
+      <div class="card span-12">
+        <div class="section-heading">
+          <div>
+            <h3 class="section-title">Search the opportunity list</h3>
+            <p class="section-subtitle">Filter by title or role description.</p>
+          </div>
+        </div>
+        <input type="text" id="search" placeholder="Search by role, domain, or skill">
+      </div>
 
-    <h3>⭐ Recommended for You</h3>
-    <div id="recommended"></div>
+      <div class="card span-12">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Recommended</div>
+            <h3 class="section-title">Suggested for your profile</h3>
+          </div>
+        </div>
+        <div id="recommended"></div>
+      </div>
 
-    <h3>📋 All Internships</h3>
-    <div id="allInternships"></div>
+      <div class="card span-12">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">All Roles</div>
+            <h3 class="section-title">Open internships</h3>
+          </div>
+        </div>
+        <div id="allInternships"></div>
+      </div>
+    </section>
   </main>
-
 </div>
 
 <script src="../../assets/js/student.js"></script>

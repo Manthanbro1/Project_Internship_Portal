@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 <body class="centered">
+  <main class="auth-shell page-enter">
+    <form class="auth-card" id="loginForm">
+      <div class="eyebrow">Welcome Back</div>
+      <h2>Log into your hiring workspace.</h2>
+      <p class="auth-copy">
+        Continue as a student or company and explore the seeded project and internship data already connected to the backend.
+      </p>
 
-  <form class="card" id="loginForm">
-    <h2>Login</h2>
+      <div class="profile-form" style="margin-top: 1.4rem;">
+        <label class="field-label" for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
 
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
+        <label class="field-label" for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
 
-    <button type="submit" class="btn">Login</button>
-    <p id="error" class="error"></p>
-  </form>
+        <button type="submit" class="btn full">Login</button>
+        <p id="error" class="error"></p>
+      </div>
+
+      <div class="auth-links">
+        <a href="../../index.html">Back to overview</a>
+        <a href="signup.html">Create account</a>
+      </div>
+    </form>
+  </main>
 
   <script src="../../assets/js/auth.js"></script>
 </body>

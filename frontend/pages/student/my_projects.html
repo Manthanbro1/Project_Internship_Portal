@@ -1,29 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Projects</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Portfolio</h3>
+      </div>
+      <p>Document projects, make your work legible, and use it to drive internship applications.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Student</h3>
+    <nav>
+      <a href="my_projects.html" class="active">My Projects</a>
+      <a href="find_internship.html">Find Internship</a>
+      <a href="applications.html">Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
 
-    <a href="my_projects.html" class="active">My Projects</a>
-    <a href="find_internship.html">Find Internship</a>
-    <a href="applications.html">Applications</a>
-
-    <a href="profile.html">Profile</a>
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
-  <main class="content">
-    <h2>My Projects</h2>
-    <a href="add_project.html" class="btn">+ Add Project</a>
-    <div id="projects"></div>
-  </main>
 
+  <main class="content">
+    <section class="shell-header page-enter stagger-1">
+      <div class="header-row">
+        <div>
+          <div class="eyebrow">Student Dashboard</div>
+          <h2>Projects that explain your capability.</h2>
+        </div>
+        <a href="add_project.html" class="btn">Add Project</a>
+      </div>
+      <p>
+        Your project list is the strongest evidence in this portal. Keep each entry clear on scope, contribution,
+        difficulty, and outcome so companies can understand your work quickly.
+      </p>
+    </section>
+
+    <section class="dashboard-grid page-enter stagger-2">
+      <div class="card span-4">
+        <div class="eyebrow">Focus</div>
+        <h3 class="section-title">Breadth</h3>
+        <p class="section-subtitle">Show a balanced mix of backend, frontend, data, and workflow-driven work.</p>
+      </div>
+      <div class="card span-4">
+        <div class="eyebrow">Signal</div>
+        <h3 class="section-title">Ownership</h3>
+        <p class="section-subtitle">Describe what you personally designed, implemented, improved, or shipped.</p>
+      </div>
+      <div class="card span-4">
+        <div class="eyebrow">Outcome</div>
+        <h3 class="section-title">Impact</h3>
+        <p class="section-subtitle">Use each project to show who used it and what became better because of it.</p>
+      </div>
+      <div class="span-12">
+        <div id="projects"></div>
+      </div>
+    </section>
+  </main>
 </div>
 
 <script src="../../assets/js/student.js"></script>

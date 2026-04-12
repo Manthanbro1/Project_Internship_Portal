@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-  <h2>My Profile</h2>
+<div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Profile</h3>
+      </div>
+      <p>Shape the context behind your projects so recommendations and company impressions become stronger.</p>
+    </div>
 
-  <input id="department" placeholder="Department" />
-  <textarea id="about" placeholder="About Me"></textarea>
-  <input id="github" placeholder="GitHub Link" />
-  <input id="linkedin" placeholder="LinkedIn Link" />
+    <nav>
+      <a href="my_projects.html">My Projects</a>
+      <a href="find_internship.html">Find Internship</a>
+      <a href="applications.html">Applications</a>
+      <a href="profile.html" class="active">Profile</a>
+    </nav>
 
-  <button onclick="saveProfile()">Save</button>
+    <button onclick="logout()" class="btn secondary">Logout</button>
+  </aside>
 
-  <script src="../../assets/js/common.js"></script>
-  <script src="../../assets/js/student.js"></script>
+  <main class="content">
+    <section class="profile-shell page-enter stagger-1">
+      <div class="eyebrow">Student Context</div>
+      <h2>Make your profile useful.</h2>
+      <p>Keep this focused on your interests, working style, and profile links. It helps recommendation quality and gives companies context.</p>
+
+      <div class="profile-form" style="margin-top: 1.4rem;">
+        <label class="field-label" for="department">Department</label>
+        <input id="department" placeholder="Department" />
+
+        <label class="field-label" for="about">About Me</label>
+        <textarea id="about" placeholder="Short description of your interests and working style"></textarea>
+
+        <div class="split-grid">
+          <div>
+            <label class="field-label" for="github">GitHub Link</label>
+            <input id="github" placeholder="GitHub Link" />
+          </div>
+          <div>
+            <label class="field-label" for="linkedin">LinkedIn Link</label>
+            <input id="linkedin" placeholder="LinkedIn Link" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button onclick="saveProfile()" class="btn" type="button">Save Profile</button>
+          <a href="my_projects.html" class="btn secondary">Back To Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/js/student.js"></script>
 </body>
 </html>

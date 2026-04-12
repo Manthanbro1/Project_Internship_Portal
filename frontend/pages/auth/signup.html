@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signup</title>
   <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 <body class="centered">
+  <main class="auth-shell page-enter">
+    <form class="auth-card" id="signupForm">
+      <div class="eyebrow">Create Access</div>
+      <h2>Join the project-first portal.</h2>
+      <p class="auth-copy">
+        Register as a student to present your portfolio, or as a company to publish internships and review project-backed applications.
+      </p>
 
-  <form class="card" id="signupForm">
-    <h2>Create Account</h2>
+      <div class="profile-form" style="margin-top: 1.4rem;">
+        <label class="field-label" for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your full name" required />
 
-    <input type="text" id="name" placeholder="Full Name" required />
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
+        <label class="field-label" for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
 
-    <select id="role" required>
-      <option value="">Select Role</option>
-      <option value="student">Student</option>
-      <option value="company">Company</option>
-    </select>
+        <label class="field-label" for="password">Password</label>
+        <input type="password" id="password" placeholder="Create password" required />
 
-    <button type="submit" class="btn">Register</button>
-    <p id="error" class="error"></p>
-  </form>
+        <label class="field-label" for="role">Role</label>
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option value="student">Student</option>
+          <option value="company">Company</option>
+        </select>
+
+        <button type="submit" class="btn full">Create Account</button>
+        <p id="error" class="error"></p>
+      </div>
+
+      <div class="auth-links">
+        <a href="../../index.html">Back to overview</a>
+        <a href="login.html">Already have an account?</a>
+      </div>
+    </form>
+  </main>
 
   <script src="../../assets/js/auth.js"></script>
 </body>

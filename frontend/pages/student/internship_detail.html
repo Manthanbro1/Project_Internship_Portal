@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Internship Detail</title>
   <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 <body>
-
 <div class="layout">
+  <aside class="sidebar page-enter">
+    <div class="sidebar-head">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="eyebrow">Student Workspace</div>
+        <h3>Apply With Intent</h3>
+      </div>
+      <p>Choose the projects that best support your fit for the selected role. Keep the set focused.</p>
+    </div>
 
-  <aside class="sidebar">
-    <h3>Student</h3>
-    <a href="my_projects.html">My Projects</a>
-    <a href="find_internship.html">Find Internship</a>
-    <a href="applications.html">Applications</a>
+    <nav>
+      <a href="my_projects.html">My Projects</a>
+      <a href="find_internship.html" class="active">Find Internship</a>
+      <a href="applications.html">Applications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
 
-    <a href="profile.html">Profile</a>
     <button onclick="logout()" class="btn secondary">Logout</button>
   </aside>
 
   <main class="content">
-    <h2 id="roleTitle"></h2>
-    <p id="roleDesc"></p>
+    <section class="form-shell page-enter stagger-1">
+      <div class="eyebrow">Internship Detail</div>
+      <h2 id="roleTitle"></h2>
+      <p id="roleDesc"></p>
 
-    <h3>Attach Projects (1–3)</h3>
-    <div id="projectList"></div>
+      <div style="margin-top: 1.5rem;">
+        <div class="section-heading">
+          <div>
+            <h3 class="section-title">Attach supporting projects</h3>
+            <p class="section-subtitle">Select between one and three projects that most directly support this role.</p>
+          </div>
+        </div>
+        <div id="projectList" class="card-grid" style="margin-top: 1rem;"></div>
+      </div>
 
-    <button id="applyBtn" class="btn">Apply</button>
-    <p id="error" class="error"></p>
+      <div class="actions" style="margin-top: 1.2rem;">
+        <button id="applyBtn" class="btn">Apply Now</button>
+        <a href="find_internship.html" class="btn secondary">Back</a>
+      </div>
+      <p id="error" class="error"></p>
+    </section>
   </main>
-
 </div>
 
 <script src="../../assets/js/student.js"></script>
