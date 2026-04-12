@@ -1,10 +1,11 @@
-# backend/app/models/project_skill.py
-from sqlalchemy import Column, Integer, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer, UniqueConstraint
+
 from ..database.base import Base
 
 
-class Project_Skill(Base):
+class ProjectSkill(Base):
     __tablename__ = "project_skills"
+    __table_args__ = (UniqueConstraint("project_id", "skill_id", name="uq_project_skills_pair"),)
 
     id = Column(Integer, primary_key=True)
     project_id = Column(Integer, ForeignKey("projects.id"), nullable=False)

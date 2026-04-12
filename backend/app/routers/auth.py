@@ -1,11 +1,10 @@
-# backend/app/routers/auth.py
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
+from ..core.security import create_access_token, hash_password, verify_password
 from ..database.session import SessionLocal
 from ..models.user import User
 from ..schemas.user import UserCreate
-from ..core.security import hash_password, verify_password, create_access_token
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
@@ -27,9 +26,8 @@ def register(user_data: UserCreate, db: Session = Depends(get_db)):
     user = User(
         name=user_data.name,
         email=user_data.email,
-        password=user_data.password,
         password_hash=hash_password(user_data.password),
-        role=user_data.role
+        role=user_data.role,
     )
 
     db.add(user)
@@ -46,9 +44,8 @@ def login(email: str, password: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     token = create_access_token({"user_id": user.id})
-
     return {
         "access_token": token,
         "token_type": "bearer",
-        "role": user.role
+        "role": user.role,
     }

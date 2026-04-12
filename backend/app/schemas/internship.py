@@ -1,7 +1,8 @@
-# backend/app/schemas/internship.py
-from pydantic import BaseModel
-from typing import Optional
 from datetime import datetime
+from typing import Literal, Optional
+
+from pydantic import BaseModel
+
 
 class InternshipCreate(BaseModel):
     role_title: str
@@ -9,7 +10,7 @@ class InternshipCreate(BaseModel):
     required_skills: str
     paid: bool
     stipend_amount: Optional[int] = None
-    mode: str
+    mode: Literal["Online", "Offline"]
 
 
 class InternshipResponse(BaseModel):
@@ -17,7 +18,7 @@ class InternshipResponse(BaseModel):
     role_title: str
     role_description: str
     paid: bool
-    mode: str
+    mode: Literal["Online", "Offline"]
     created_at: datetime
 
     class Config:

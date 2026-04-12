@@ -1,17 +1,18 @@
-# backend/app/schemas/project.py
-from pydantic import BaseModel
-from typing import List, Optional
 from datetime import datetime
+from typing import List, Literal, Optional
+
+from pydantic import BaseModel
+
 
 class ProjectCreate(BaseModel):
     title: str
     description: str
     members_count: Optional[int] = None
     student_role: str
-    difficulty: str
-    status: str
+    difficulty: Literal["Easy", "Medium", "Hard"]
+    status: Literal["Idea", "Ongoing", "Completed"]
     outcome: Optional[str] = None
-    skills: List[str]   # hybrid model
+    skills: List[str]
 
 
 class ProjectResponse(BaseModel):
@@ -19,8 +20,8 @@ class ProjectResponse(BaseModel):
     title: str
     description: str
     student_role: str
-    difficulty: str
-    status: str
+    difficulty: Literal["Easy", "Medium", "Hard"]
+    status: Literal["Idea", "Ongoing", "Completed"]
     created_at: datetime
 
     class Config:

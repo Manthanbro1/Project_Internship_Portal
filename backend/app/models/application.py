@@ -1,28 +1,24 @@
-# backend/app/models/application.py
-from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
+from sqlalchemy import CheckConstraint, Column, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint
 from sqlalchemy.sql import func
-# Replace the single relative import with a tolerant import:
-try:
-    # normal package import (when used as part of app)
-    from ..database.base import Base
-except (ImportError, ValueError):
-    # fallback when running the file directly (no parent package)
-    import os
-    import sys
-    # add backend folder to sys.path so absolute package import works
-    pkg_root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-    if pkg_root not in sys.path:
-        sys.path.insert(0, pkg_root)
-    from app.database.base import Base
+
+from ..database.base import Base
+
 
 class Application(Base):
     __tablename__ = "applications"
+    __table_args__ = (
+        UniqueConstraint("student_id", "internship_id", name="uq_applications_student_internship"),
+        CheckConstraint(
+            "status IN ('Applied', 'Shortlisted', 'Selected', 'Rejected')",
+            name="ck_applications_status",
+        ),
+    )
 
     id = Column(Integer, primary_key=True)
     student_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     internship_id = Column(Integer, ForeignKey("internships.id"), nullable=False)
 
-    status = Column(String, default="Applied")
+    status = Column(String, default="Applied", nullable=False)
     rejection_reason = Column(Text, nullable=True)
 
     applied_at = Column(DateTime(timezone=True), server_default=func.now())

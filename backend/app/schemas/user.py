@@ -1,11 +1,13 @@
-# backend/app/schemas/user.py
-from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Literal
+
+from pydantic import BaseModel, EmailStr
+
 
 class UserBase(BaseModel):
     name: str
     email: EmailStr
-    role: str
+    role: Literal["student", "company"]
 
 
 class UserCreate(UserBase):
