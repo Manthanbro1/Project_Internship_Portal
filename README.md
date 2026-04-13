@@ -11,6 +11,20 @@ This project connects two kinds of users:
 
 The platform is centered around the idea that projects can demonstrate capability better than a resume alone.
 
+## Screenshots
+
+![Internship Portal screenshot 1](Photos/Screenshot%202026-04-13%20143635.png)
+
+![Internship Portal screenshot 2](Photos/Screenshot%202026-04-13%20143742.png)
+
+![Internship Portal screenshot 3](Photos/Screenshot%202026-04-13%20143827.png)
+
+![Internship Portal screenshot 4](Photos/Screenshot%202026-04-13%20143852.png)
+
+![Internship Portal screenshot 5](Photos/Screenshot%202026-04-13%20144029.png)
+
+![Internship Portal screenshot 6](Photos/Screenshot%202026-04-13%20144039.png)
+
 ## Tech Stack
 
 - Backend: FastAPI, SQLAlchemy, Pydantic
